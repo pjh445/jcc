@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+*	{margin:0; padding:0; box-sizing:border-box;}
+html, body	{font:10pt "나눔고딕"; color:#666; }
+a			{text-decoration:none; color:#666; display:block; }
+a:hover	{color:#bc9b6a; }
+
+#layout	{max-width:1280px; /* height:1200px; */ margin:auto;}
+
+
+/*상단*/
+header			{height:200px; display:flex; align-items:center; }
+header>div	{flex:1; display:flex; align-items:center; height:200px; background:rgba(255,255,255,0.8); position:relative; z-index:1; /* height:320px; */ transition:height 0.5s;}
+header>div>a {flex:1; }
+button.phone {display: none;}
+#menu	{flex:2.7; display:flex; height:40px;}
+header>div>nav>a{flex:1; text-align:center; padding:10px; font-weight:bold; font-size:1.2rem; }
+#menu>div		{flex:1; text-align:center; }
+#menu>div>a	{padding:10px; font-weight:bold; font-size:1.2rem;}
+a.mainMenu:hover, a.mainMenu.act {background:#4f4e48; color:white;}
+
+/*하위메뉴*/
+nav.submenu		{/* height:150px; */ line-height:30px; padding-top:10px; /* display:none; */  height:0; overflow: hidden; transition:height 0.5s;} 
+nav.submenu a:hover, nav.submenu a.act {background:#85816c; color:white;}
+
+/*슬라이드 이미지*/
+#sliding		{/* height:350px; */ position:relative; overflow:hidden; }
+#sliding>h1	{position:absolute; width:400px; height:120px; background:rgba(255,255,255,0.7); border-radius:20px; z-index:1; left:32%; top:35%; color:black; padding:27px 0 27px 110px; line-height:30px; }
+#slide	{display:flex; position:relative; /* width:3600px; left:-1280px; */}
+#slide img  {display:block; max-width:100%;}
+
+#circle {position:absolute; width:100%; bottom:20px; display: flex; justify-content: center;}
+#circle div {width:20px; height:20px; border-radius:50%; background: white; box-shadow: 0 0 3px black; margin:5px;}
+#circle div.red {background: red;}
+
+/*메인*/
+main				{/* height:500px; */ display:flex; padding-top:50px; position:relative;}
+main>section>h2		{border-bottom:1px solid #666; padding-bottom:5px; margin-bottom:15px; }
+
+
+/*공지사항*/
+#notice				{flex:1; position:relative;}
+#notice>ul 		{line-height:30px; padding-left:20px;}
+#notice a 		{display:inline-block; }
+#notice span	{position:absolute; right:0; }
+
+
+/*팝업*/
+#popup			{position:absolute; width:660px; height:490px; background:white; border-radius:20px; padding:27px; left:22%; top:-300px; z-index:1;/* display:none; */ opacity:0; z-index: -1; transition: opacity 0.5s;}
+#popup>h2		{display:none; }
+#popup>button	{position:absolute; right:30px; margin-top:-30px; padding:5px 10px; display:block;}
+
+
+
+/*협력사 콘텐츠*/
+#partner			{flex:1; margin:0 100px; }
+#partner>img	{cursor:pointer; margin:auto; display:block; }
+#partner>div	{display:flex; margin:30px 30px 0 50px; }
+#partner>div>*	{flex:1; }
+#partner h3		{width:130px; height:130px; background:#bc9b6a; color:white; border-radius:65px; line-height:140%; padding-top:38px; text-align:center; font-size:1.35rem; letter-spacing:-1px;}
+#partner ol 			{line-height:30px; margin-left:20px; margin-top:10px;}
+
+/*아이콘형 콘텐츠*/
+#icons>h2		{display:none; }
+#icons>div	{line-height:50px; text-align:center; margin-top:50px; }
+
+/*하단*/
+footer			{height:150px; background:#eee; padding:30px;}
+footer>ul		{display:flex; list-style:none; line-height:30px; }
+footer li 	{flex:1; }
+footer a 		{display:inline;}
+
+
+
+/************************/
+@media(max-width:850px ){
+    header {height:initial; padding-top:20px; }
+    header img {max-width:150px;}
+    header>div {flex-direction: column; z-index: 2; height:60px;}
+
+    button.phone {display: block; position:absolute; left:10px; top:15px; font-size:2rem; border:none; background:none;}
+    #menu {padding-top:30px; flex-direction: column; background: rgba(255,255,255, 0.9); position:absolute; width:100%; height:90vh; line-height: 150%; top:60px; left:-100vw; transition: left 0.5s;}
+    #menu>div {flex:initial;}
+
+    #sliding>h1 {width:50%; left:25%; font-size:1.2rem; top:25px; line-height: 150%; padding:10px 20px; text-align: center; height:initial; border-radius:15px;}
+
+    #slide img {height:150px; }
+    #circle {bottom:10px;}
+    #circle div {width:10px; height:10px;}
+
+    main {flex-direction: column;  padding:30px 10px;}
+    #partner {margin:0;  padding-top:30px;}
+    #partner div {flex-direction: column; }
+    #partner h3  {margin:auto;}
+    #partner ol {width:90%; max-width:150px; margin:auto; padding-top:20px;}
+
+    #popup {width:90%; left:5%; top:-100px; height:initial;}
+    #popup img {width:100%;}
+
+    footer {height:initial;}
+    footer>ul {flex-direction: column;}
+}
